@@ -1,21 +1,23 @@
 <template>
-  <Header/>
-  <Entrance/>
+  <Header />
+  <Entrance />
+  <Skills />
 </template>
 
 <script>
+import Header from "./components/Header.vue";
 import Entrance from "./components/Entrance.vue";
-import Header from "./components/Header.vue"
+import Skills from "./components/Skills.vue";
 export default {
   data() {
-    return{}
+    return {};
   },
   components: {
     Header,
-    Entrance
-}
-}
+    Entrance,
+    Skills,
+  },
+};
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
