@@ -1,15 +1,20 @@
 <template>
-  <div class="container my-[50px] p-[10px] flex items-center justify-center flex-col gap-[30px]">
+  <div class="container my-[50px] p-[10px] flex items-center justify-center flex-col xl:flex-row-reverse gap-[30px]">
     <div class="entPhoto">
       <img
         src="../../public/images/main-photo.jpg"
         alt="#"
-        class="mainPhoto w-[300px] h-[300px]"
+        class="mainPhoto w-[300px] h-[300px] xl:w-[450px] xl:h-[450px]"
       />
     </div>
-    <div class="entText">
-      <h1 class="text-[30px] text-semiBlack font-bold text-center">Front-End Vue Developer🫡</h1>
-      <div class="info text-[18px] text-semiBlack font-medium text-center pt-[20px]">
+    <div class="flex items-center justify-center flex-col gap-[30px]">
+    <div class="entText xl:flex xl:items-center xl:justify-center xl:flex-col xl:pb-[30px]">
+      <h1 class="text-[30px] text-semiBlack font-bold text-center
+       xl:text-[70px] xl:max-w-[510px]">
+       Front-End Vue Developer🫡
+      </h1>
+      <div class="info text-[18px] text-semiBlack font-medium text-center pt-[20px]
+       xl:text-[24px] xl:max-w-[291px]">
         <p>Hi, I'm Mohir Bakhromov. A passionate Front-end Vue Developer based in Tashkent, Uzbekistan. 📍</p>
       </div>
     </div>
@@ -22,6 +27,7 @@
 
       </a>
     </div>
+  </div>
   </div>
 </template>
 
