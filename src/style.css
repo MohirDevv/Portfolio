@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  background-color: transparent;
+}
+
+img {
+  border-style: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+span,
+label {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+}
+
+.container{
+  max-width: 100%;
+}
+/* font-family: 'Roboto Mono', monospace;
+font-family: 'Rubik', sans-serif; */
