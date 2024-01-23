@@ -7,6 +7,7 @@ export default {
       semiBlack: "#2d2e32",
       lightGreen: "#6aaa64",
       lightGray: "#a1a1a1",
+      pGray: "#767676",
     },
     fontFamily: {
       sans: ["Rubik", "sans-serif"],
