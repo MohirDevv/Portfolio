@@ -49,5 +49,9 @@ export default {
 <style scoped>
 .container {
   box-shadow: 0 20px 15px rgba(0, 0, 0, 0.09);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background: #fff;
 }
 </style>
