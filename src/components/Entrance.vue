@@ -1,7 +1,6 @@
 <template>
   <div
-    class="container my-[50px] p-[10px] flex items-center justify-center flex-col xl:flex-row-reverse gap-[30px]
-    mt-[100px] xl:mt-[120px]"
+    class="container my-[50px] p-[10px] flex items-center justify-center flex-col xl:flex-row-reverse gap-[30px] mt-[100px] xl:mt-[120px]"
   >
     <div class="entPhoto">
       <img
@@ -22,7 +21,9 @@
         <div
           class="info text-[18px] text-semiBlack font-medium text-center pt-[20px] xl:text-[24px] xl:max-w-[291px]"
         >
-          <p class="bg-lightGray p-[6px] rounded-lg max-w-[300px] m-auto xl:m-0">
+          <p
+            class="bg-lightGray p-[6px] rounded-lg max-w-[300px] m-auto xl:m-0"
+          >
             Hi, I'm Mohir Bakhromov. A passionate Front-end Vue Developer based
             in Tashkent, Uzbekistan. 📍
           </p>

@@ -4,6 +4,8 @@
   <Skills />
   <About/>
   <Projects/>
+  <Contacts/>
+  <Footer/>
 </template>
 
 <script>
@@ -12,6 +14,8 @@ import Entrance from "./components/Entrance.vue";
 import Skills from "./components/Skills.vue";
 import About from "./components/About.vue";
 import Projects from "./components/Projects.vue";
+import Contacts from "./components/Contacts.vue";
+import Footer from "./components/Footer.vue";
 export default {
   data() {
     return {};
@@ -21,8 +25,13 @@ export default {
     Entrance,
     Skills,
     About,
-    Projects
+    Projects,
+    Contacts,
+    Footer
 },
+mounted() {
+  console.log("Hello Console");
+}
 };
 </script>
 
