@@ -8,6 +8,7 @@ export default {
       lightGreen: "#6aaa64",
       lightGray: "#a1a1a1",
       pGray: "#767676",
+      cardBg: "#d4cfc5",
     },
     fontFamily: {
       sans: ["Rubik", "sans-serif"],
