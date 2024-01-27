@@ -1,7 +1,7 @@
 <template>
   <div
     class="container my-[50px] p-[10px] flex items-center justify-center flex-col xl:flex-row-reverse gap-[30px] mt-[100px] xl:mt-[120px]"
-  >
+    id="home">
     <div class="entPhoto">
       <img
         src="../../public/images/main-photo.jpg"

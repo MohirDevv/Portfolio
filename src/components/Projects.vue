@@ -1,5 +1,5 @@
 <template>
-  <div class="container px-[20px] flex items-center justify-center flex-col">
+  <div class="container px-[20px] flex items-center justify-center flex-col" id="projects">
     <h1 class="text-[28px] pb-[20px] text-semiBlack font-bold">Projects</h1>
     <div
       class="priceOption flex items-center justify-center gap-2 p-[3px] mb-[20px] bg-[#F3F3F3] rounded-lg"

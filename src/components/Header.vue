@@ -11,21 +11,25 @@
     <div class="menu gap-5 text-semiBlack hidden md:flex">
       <p
         class="text-[20px] font-medium cursor-pointer transition-all hover:text-lightGreen"
+        @click="scrollToElement('home')"
       >
         Home
       </p>
       <p
         class="text-[20px] font-medium cursor-pointer transition-all hover:text-lightGreen"
+        @click="scrollToElement('about')"
       >
         About
       </p>
       <p
         class="text-[20px] font-medium cursor-pointer transition-all hover:text-lightGreen"
+        @click="scrollToElement('projects')"
       >
         Projects
       </p>
       <p
         class="text-[20px] font-medium cursor-pointer transition-all hover:text-lightGreen"
+        @click="scrollToElement('contacts')"
       >
         Contacts
       </p>
@@ -33,15 +37,60 @@
     <div class="mobileMenu flex items-center md:hidden">
       <i
         class="fas fa-bars text-[20px] text-semiBlack cursor-pointer transition-all hover:text-lightGreen"
+        @click="toggleMobileMenu"
       ></i>
     </div>
+    <transition name="slide-down">
+      <div
+        :class="{ 'mobile-menu': true, 'mobile-menu-active': isMobileMenuOpen }"
+      >
+        <p
+          class="text-[20px] font-medium cursor-pointer transition-all hover:text-lightGreen"
+          @click="scrollToElement('home')"
+        >
+          Home
+        </p>
+        <p
+          class="text-[20px] font-medium cursor-pointer transition-all hover:text-lightGreen"
+          @click="scrollToElement('about')"
+        >
+          About
+        </p>
+        <p
+          class="text-[20px] font-medium cursor-pointer transition-all hover:text-lightGreen"
+          @click="scrollToElement('projects')"
+        >
+          Projects
+        </p>
+        <p
+          class="text-[20px] font-medium cursor-pointer transition-all hover:text-lightGreen"
+          @click="scrollToElement('contacts')"
+        >
+          Contacts
+        </p>
+      </div>
+    </transition>
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    return {};
+    return {
+      isMobileMenuOpen: false,
+    };
+  },
+  methods: {
+    scrollToElement(elementId) {
+      const targetElement = document.getElementById(elementId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+        this.isMobileMenuOpen = false;
+      }
+    },
+    toggleMobileMenu() {
+      this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    },
   },
 };
 </script>
@@ -53,5 +102,23 @@ export default {
   top: 0;
   z-index: 100;
   background: #fff;
+}
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0px;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 100%;
+  z-index: 99;
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(-100%);
+}
+
+.mobile-menu-active {
+  transform: translateY(68px);
 }
 </style>

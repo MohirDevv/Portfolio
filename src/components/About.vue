@@ -1,5 +1,5 @@
 <template>
-  <div class="container py-[50px] mb-[15px] xl:py-[100px] px-[20px]">
+  <div class="container py-[50px] mb-[15px] xl:py-[100px] px-[20px]" id="about">
     <div
       class="main-card flex items-center justify-center flex-col xl:flex-row gap-[50px] xl:gap-[145px]"
     >
