@@ -20,7 +20,7 @@
           🧑‍💻
         </p>
       </div>
-      <div class="about-info max-w-[320px] xl:max-w-[360px]">
+      <div class="about-info max-w-[320px] xl:max-w-[360px]" data-aos="fade-up">
         <h1
           class="text-[24px] text-lightGreen font-semibold pb-[20px] text-center xl:text-left"
         >

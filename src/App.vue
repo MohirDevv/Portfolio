@@ -2,13 +2,14 @@
   <Header />
   <Entrance />
   <Skills />
-  <About/>
-  <Projects/>
-  <Contacts/>
-  <Footer/>
+  <About />
+  <Projects />
+  <Contacts />
+  <Footer />
 </template>
 
 <script>
+import AOS from "aos";
 import Header from "./components/Header.vue";
 import Entrance from "./components/Entrance.vue";
 import Skills from "./components/Skills.vue";
@@ -27,13 +28,13 @@ export default {
     About,
     Projects,
     Contacts,
-    Footer
-},
-mounted() {
-  console.log("Hello Console");
-}
+    Footer,
+  },
+  mounted() {
+    AOS.init();
+    console.log("Hello Console");
+  },
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

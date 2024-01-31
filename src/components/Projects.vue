@@ -23,7 +23,7 @@
       <div class="real transition-all" v-if="isReal">
         <div
           class="card flex flex-col bg-cardBg px-[15px] md:px-[25px] py-[12px] md:py-[18px] rounded-md transition-all mb-[20px]"
-        >
+          data-aos="flip-left">
           <h1 class="text-[20px] font-medium font-mono pb-[10px]">Wordle.uz</h1>
           <img
             src="../../public/images/wordle-main.jpg"
@@ -74,7 +74,7 @@
         </div>
         <div
           class="card flex flex-col bg-cardBg px-[15px] md:px-[25px] py-[12px] md:py-[18px] rounded-md transition-all mb-[20px]"
-        >
+          data-aos="flip-right">
           <h1 class="text-[20px] font-medium font-mono pb-[10px]">
             Avtovoditel.uz
           </h1>
@@ -100,9 +100,6 @@
               <div class="optionSk axios">
                 <p class="text-[13px] md:text-[18px]">Axios</p>
               </div>
-              <div class="optionSk websocket">
-                <p class="text-[13px] md:text-[18px]">Aos</p>
-              </div>
             </div>
             <div class="desc pt-[15px] text-semiBlack max-w-[700px]">
               <p class="md:text-[22px]">
@@ -123,7 +120,7 @@
         </div>
         <div
           class="card flex flex-col bg-cardBg px-[15px] md:px-[25px] py-[12px] md:py-[18px] rounded-md transition-all mb-[20px]"
-        >
+          data-aos="flip-left">
           <h1 class="text-[20px] font-medium font-mono pb-[10px]">Book shop</h1>
           <img
             src="../../public/images/Снимок экрана 2024-01-23 220205.png"
@@ -172,7 +169,7 @@
       <div class="nreal transition-all" v-if="isntReal">
         <div
           class="card flex flex-col bg-cardBg px-[15px] md:px-[25px] py-[12px] md:py-[18px] rounded-md transition-all mb-[20px]"
-        >
+          data-aos="flip-left">
           <h1 class="text-[20px] font-medium font-mono pb-[10px]">
             Home State
           </h1>
@@ -218,7 +215,7 @@
         </div>
         <div
           class="card flex flex-col bg-cardBg px-[15px] md:px-[25px] py-[12px] md:py-[18px] rounded-md transition-all mb-[20px]"
-        >
+          data-aos="flip-right">
           <h1 class="text-[20px] font-medium font-mono pb-[10px]">
             Window sync.
           </h1>
@@ -261,7 +258,7 @@
         </div>
         <div
           class="card flex flex-col bg-cardBg px-[15px] md:px-[25px] py-[12px] md:py-[18px] rounded-md transition-all mb-[20px]"
-        >
+          data-aos="flip-left">
           <h1 class="text-[20px] font-medium font-mono pb-[10px]">Camping</h1>
           <img
             src="../../public/images/Camping-prew.png"
@@ -298,7 +295,7 @@
         </div>
         <div
           class="card flex flex-col bg-cardBg px-[15px] md:px-[25px] py-[12px] md:py-[18px] rounded-md transition-all mb-[20px]"
-          v-if="!IsitAll"
+          v-if="!IsitAll" data-aos="flip-right"
         >
           <h1 class="text-[20px] font-medium font-mono pb-[10px]">Memory Game</h1>
           <img
@@ -334,7 +331,7 @@
             </div>
           </div>
         </div>
-        <div class="loadMore flex items-center justify-center" @click="loadMore">
+        <div class="loadMore flex items-center justify-center" @click="loadMore" data-aos="fade-up">
           <p
             class="text-black flex items-center justify-center py-[5px] px-[10px] rounded-lg gap-1 bg-[#a1a1a1]"
           >
