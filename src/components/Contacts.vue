@@ -11,7 +11,7 @@
         <i class="fab fa-telegram text-[25px] text-semiBlack"></i>
         <div class="pr text-semiBlack">
           <a
-            href="https://t.me/bkhrmv"
+            href="https://t.me/mbkhrmv"
             target="_blank"
             class="hover:text-lightGreen"
             >Telegram</a
