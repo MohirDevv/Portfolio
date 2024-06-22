@@ -1,5 +1,8 @@
 <template>
-  <div class="container px-[20px] flex items-center justify-center flex-col" id="projects">
+  <div
+    class="container px-[20px] flex items-center justify-center flex-col"
+    id="projects"
+  >
     <h1 class="text-[28px] pb-[20px] text-semiBlack font-bold">Projects</h1>
     <div
       class="priceOption flex items-center justify-center gap-2 p-[3px] mb-[20px] bg-[#F3F3F3] rounded-lg"
@@ -20,19 +23,66 @@
       </h2>
     </div>
     <div class="cards transition-all mb-[50px]">
-    <div v-if="isReal">
+      <div v-if="isReal">
+        <div
+          v-for="(card, index) in realCards"
+          :key="index"
+          class="card flex flex-col bg-cardBg px-[15px] md:px-[25px] py-[12px] md:py-[18px] rounded-md transition-all mb-[20px]"
+          :data-aos="index % 2 === 0 ? 'flip-left' : 'flip-right'"
+        >
+          <h1 class="text-[20px] font-medium font-mono pb-[10px]">
+            {{ card.title }}
+          </h1>
+          <img
+            :src="card.imageSrc"
+            class="md:max-w-[700px] rounded-sm"
+            alt="#"
+          />
+          <div class="info pt-[7px] md:pt-[14px]">
+            <div class="options flex items-center gap-1 md:gap-3">
+              <div
+                v-for="(tech, idx) in card.technologies"
+                :key="idx"
+                :class="['optionSk', tech.class]"
+              >
+                <p class="text-[13px] md:text-[18px]">{{ tech.name }}</p>
+              </div>
+            </div>
+            <div class="desc pt-[15px] text-semiBlack max-w-[700px]">
+              <p class="md:text-[22px]">{{ card.description }}</p>
+              <p class="pt-[8px] md:pt-[14px] text-[18px] text-semiBlack">
+                Check this out! <br />
+                <a
+                  :href="card.link"
+                  target="_blank"
+                  class="text-[#0ea4e994] cursor-pointer text-[16px] md:text-[18px]"
+                  >{{ card.linkText }}</a
+                >
+                <br v-if="card.botLink" />
+                <a
+                  v-if="card.botLink"
+                  :href="card.botLink"
+                  target="_blank"
+                  class="text-[#0ea4e994] cursor-pointer text-[16px] md:text-[18px]"
+                  >{{ card.botLinkText }}</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nreal transition-all" v-if="isntReal">
       <div
-        v-for="(card, index) in realCards"
+        v-for="(card, index) in petCards"
         :key="index"
         class="card flex flex-col bg-cardBg px-[15px] md:px-[25px] py-[12px] md:py-[18px] rounded-md transition-all mb-[20px]"
-        :data-aos="index % 2 === 0 ? 'flip-left' : 'flip-right'"
+        data-aos="flip-left"
       >
-        <h1 class="text-[20px] font-medium font-mono pb-[10px]">{{ card.title }}</h1>
-        <img
-          :src="card.imageSrc"
-          class="md:max-w-[700px] rounded-sm"
-          alt="#"
-        />
+        <h1 class="text-[20px] font-medium font-mono pb-[10px]">
+          {{ card.title }}
+        </h1>
+        <img :src="card.imageSrc" class="md:max-w-[700px] rounded-sm" alt="#" />
         <div class="info pt-[7px] md:pt-[14px]">
           <div class="options flex items-center gap-1 md:gap-3">
             <div
@@ -44,7 +94,9 @@
             </div>
           </div>
           <div class="desc pt-[15px] text-semiBlack max-w-[700px]">
-            <p class="md:text-[22px]">{{ card.description }}</p>
+            <p class="md:text-[22px]">
+              {{ card.description }}
+            </p>
             <p class="pt-[8px] md:pt-[14px] text-[18px] text-semiBlack">
               Check this out! <br />
               <a
@@ -53,61 +105,11 @@
                 class="text-[#0ea4e994] cursor-pointer text-[16px] md:text-[18px]"
                 >{{ card.linkText }}</a
               >
-              <br v-if="card.botLink" />
-              <a
-                v-if="card.botLink"
-                :href="card.botLink"
-                target="_blank"
-                class="text-[#0ea4e994] cursor-pointer text-[16px] md:text-[18px]"
-                >{{ card.botLinkText }}</a
-              >
             </p>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-      <div class="nreal transition-all" v-if="isntReal">
-        <div
-        v-for="(card, index) in petCards"
-        :key="index"
-          class="card flex flex-col bg-cardBg px-[15px] md:px-[25px] py-[12px] md:py-[18px] rounded-md transition-all mb-[20px]"
-          data-aos="flip-left">
-          <h1 class="text-[20px] font-medium font-mono pb-[10px]">
-            {{ card.title }}
-          </h1>
-          <img
-            :src="card.imageSrc"
-            class="md:max-w-[700px] rounded-sm"
-            alt="#"
-          />
-          <div class="info pt-[7px] md:pt-[14px]">
-            <div class="options flex items-center gap-1 md:gap-3">
-            <div
-              v-for="(tech, idx) in card.technologies"
-              :key="idx"
-              :class="['optionSk', tech.class]"
-            >
-              <p class="text-[13px] md:text-[18px]">{{ tech.name }}</p>
-            </div>
-          </div>
-            <div class="desc pt-[15px] text-semiBlack max-w-[700px]">
-              <p class="md:text-[22px]">
-                {{ card.description }}
-              </p>
-              <p class="pt-[8px] md:pt-[14px] text-[18px] text-semiBlack">
-                Check this out! <br />
-                <a
-                  :href="card.link"
-                  target="_blank"
-                  class="text-[#0ea4e994] cursor-pointer text-[16px] md:text-[18px]"
-                  >{{ card.linkText }}</a
-                >
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- <div class="loadMore flex items-center justify-center" @click="loadMore" data-aos="fade-up">
+      <!-- <div class="loadMore flex items-center justify-center" @click="loadMore" data-aos="fade-up">
           <p
             class="text-black flex items-center justify-center py-[5px] px-[10px] rounded-lg gap-1 bg-[#a1a1a1]"
           >
@@ -115,8 +117,8 @@
             <i class="fas fa-chevron-down transition-all" id="arrow"></i>
           </p>
         </div> -->
-      </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -129,39 +131,39 @@ export default {
       realCards: [
         {
           title: "Wordle.uz",
-          imageSrc: "../../public/images/wordle-main.jpg",
+          imageSrc: "/images/wordle-main.jpg",
           technologies: [
             { name: "Vue.js", class: "vue" },
             { name: "JS", class: "js" },
             { name: "Tailwind", class: "tailwind" },
             { name: "Vite", class: "vite" },
-            { name: "Websocket", class: "websocket" }
+            { name: "Websocket", class: "websocket" },
           ],
           description:
             "Wordle is a famous game in which you have to find a secret word in a few tries, and this is also my first serious project.",
           link: "https://wordle.uz/",
           linkText: "wordle.uz",
           botLink: "https://t.me/wordleuzb_bot",
-          botLinkText: "@WordleUzb_Bot"
+          botLinkText: "@WordleUzb_Bot",
         },
         {
           title: "Avtovoditel.uz",
-          imageSrc: "../../public/images/Снимок экрана 2024-01-23 220138.png",
+          imageSrc: "/images/Снимок экрана 2024-01-23 220138.png",
           technologies: [
             { name: "Vue.js", class: "vue" },
             { name: "JS", class: "js" },
             { name: "Tailwind", class: "tailwind" },
             { name: "Vite", class: "vite" },
-            { name: "Axios", class: "axios" }
+            { name: "Axios", class: "axios" },
           ],
           description:
             "This is site that can help you to get license for any type of auto. Just simple Landing SPA project.",
           link: "https://avtovoditel.uz/",
-          linkText: "avtovoditel.uz"
+          linkText: "avtovoditel.uz",
         },
         {
           title: "Abrtech.uz",
-          imageSrc: "../../public/images/abr-prew.png",
+          imageSrc: "/images/abr-prew.png",
           technologies: [
             { name: "HTML", class: "html" },
             { name: "BLADE", class: "html" },
@@ -175,83 +177,81 @@ export default {
           description:
             "Quite an extensive project for Landing, has a lot of interactivity for users.",
           link: "https://abrtech.uz/",
-          linkText: "abrtech.uz"
+          linkText: "abrtech.uz",
         },
         {
           title: "Book shop",
-          imageSrc: "../../public/images/Снимок экрана 2024-01-23 220205.png",
+          imageSrc: "/images/Снимок экрана 2024-01-23 220205.png",
           technologies: [
             { name: "Vue.js", class: "vue" },
             { name: "JS", class: "js" },
             { name: "Tailwind", class: "tailwind" },
             { name: "Vite", class: "vite" },
             { name: "Axios", class: "axios" },
-            { name: "Aos", class: "websocket" }
+            { name: "Aos", class: "websocket" },
           ],
           description:
             "This is site for selling books and individual courses. Nothing special, just simple Landing SPA.",
           link: "https://shaxnoza-siddiqova.uz",
-          linkText: "shaxnoza-siddiqova.uz"
-        }
+          linkText: "shaxnoza-siddiqova.uz",
+        },
       ],
       petCards: [
-      {
+        {
           title: "Home State",
-          imageSrc: "../../public/images/HomeState-prew.png",
+          imageSrc: "/images/HomeState-prew.png",
           technologies: [
-            { name: "HTML", class: "html"},
+            { name: "HTML", class: "html" },
             { name: "CSS", class: "css" },
             { name: "GSAP", class: "vue" },
             { name: "JS", class: "js" },
             { name: "Swiper.js", class: "js" },
           ],
-          description:
-            `Simple resp site for selling/renting estate. Smooth animations,
+          description: `Simple resp site for selling/renting estate. Smooth animations,
                 similiar patterns, there's nothing special.`,
           link: "https://homestate-responsive.netlify.app/",
           linkText: "Home State",
         },
         {
           title: "Window sync.",
-          imageSrc: "../../public/images/Снимок экрана 2024-01-23 215256.png",
+          imageSrc: "/images/Снимок экрана 2024-01-23 215256.png",
           technologies: [
             { name: "HTML", class: "html" },
             { name: "CSS", class: "css" },
             { name: "JS", class: "js" },
-            { name: "Three.js", class: "js" }
+            { name: "Three.js", class: "js" },
           ],
           description:
             " Very interesting project that sync. windows to fill 3d models, it also made by Three.js ",
           link: "https://enchanting-mandazi-d1956f.netlify.app/",
-          linkText: "Window sync."
+          linkText: "Window sync.",
         },
         {
           title: "Camping",
-          imageSrc: "../../public/images/Camping-prew.png",
+          imageSrc: "/images/Camping-prew.png",
           technologies: [
-          { name: "HTML", class: "html" },
+            { name: "HTML", class: "html" },
             { name: "CSS", class: "css" },
-            { name: "JS", class: "js" }
+            { name: "JS", class: "js" },
           ],
-          description:
-            "A simple example of using parallax on a website. ",
+          description: "A simple example of using parallax on a website. ",
           link: "https://marvelous-travesseiro-707b4b.netlify.app/",
-          linkText: "Camping Website"
+          linkText: "Camping Website",
         },
         {
           title: "Memory Game",
-          imageSrc: "../../public/images/memory-prew.png",
+          imageSrc: "/images/memory-prew.png",
           technologies: [
-          { name: "HTML", class: "html" },
+            { name: "HTML", class: "html" },
             { name: "CSS", class: "css" },
-            { name: "JS", class: "js" }
+            { name: "JS", class: "js" },
           ],
           description:
             "Memory Game with specific game rules and great potential",
           link: "https://fluffy-toffee-9d1863.netlify.app/",
-          linkText: "Memory Game"
-        }
-      ]
+          linkText: "Memory Game",
+        },
+      ],
     };
   },
   methods: {
@@ -264,15 +264,15 @@ export default {
       this.isntReal = true;
     },
     loadMore() {
-      let arrow = document.getElementById("arrow")
-      if(arrow.classList.contains("fa-chevron-down")) {
-        arrow.classList.add("fa-chevron-up")
-        arrow.classList.remove("fa-chevron-down")
+      let arrow = document.getElementById("arrow");
+      if (arrow.classList.contains("fa-chevron-down")) {
+        arrow.classList.add("fa-chevron-up");
+        arrow.classList.remove("fa-chevron-down");
       } else {
-        arrow.classList.remove("fa-chevron-up")
-        arrow.classList.add("fa-chevron-down")
+        arrow.classList.remove("fa-chevron-up");
+        arrow.classList.add("fa-chevron-down");
       }
-      this.IsitAll = !this.IsitAll
+      this.IsitAll = !this.IsitAll;
     },
   },
 };
